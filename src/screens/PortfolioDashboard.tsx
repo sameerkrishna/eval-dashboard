@@ -4,7 +4,7 @@ import { useAppContext } from '@/lib/appContext';
 import StatusBadge from '@/components/StatusBadge';
 import SectionCard from '@/components/SectionCard';
 import EmptyState from '@/components/EmptyState';
-import { getLifecycleIndex, LIFECYCLE_ORDER }  from '@/lib/enrichmentEngine';
+import { getLifecycleIndex, LIFECYCLE_ORDER } from '@/lib/enrichmentEngine';
 import type { EnrichedAgent } from '@/types';
 
 export default function PortfolioDashboard() {
@@ -117,93 +117,93 @@ export default function PortfolioDashboard() {
         <KpiCard label="In Dev" value={kpis.inDev} variant="in-dev" />
         <KpiCard label="Beta" value={kpis.beta} variant="beta" />
         <KpiCard label="GA" value={kpis.ga} variant="ga" />
-       
-      </div>
-     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
-  <div className="space-y-3">
-    {/* First Row: 3 Columns */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Filter by</span>
-        <select
-          value={lifecycleFilter}
-          onChange={e => setLifecycleFilter(e.target.value)}
-          className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-1"
-          aria-label="Filter by lifecycle state"
-        >
-          <option value="All">All [States]</option>
-          {LIFECYCLE_ORDER.map(s => <option key={s} value={s}>{s}</option>)}
-        </select>
-      </div>
-      <select
-        value={riskFilter}
-        onChange={e => setRiskFilter(e.target.value)}
-        className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Filter by risk category"
-      >
-        {riskCategories.map(c => <option key={c} value={c}>{c}</option>)}
-      </select>
-      <select
-        value={reviewFilter}
-        onChange={e => setReviewFilter(e.target.value)}
-        className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Filter by review status"
-      >
-        <option value="All">All [Reviews]</option>
-        <option value="Pending">Pending Reviews</option>
-        <option value="Completed">Completed Reviews</option>
-        <option value="No Review">No Review</option>
-      </select>
-    </div>
 
-    {/* Second Row: 3 Columns */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Sort by</span>
-        <select
-          value={sortBy}
-          onChange={e => setSortBy(e.target.value)}
-          className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-1"
-          aria-label="Sort by"
-        >
-          <option value="lifecycle">Lifecycle Stage</option>
-          <option value="score">Score (High to Low)</option>
-          <option value="name">Name (A-Z)</option>
-        </select>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Min Score:</span>
-        <input
-          type="range"
-          min="0"
-          max="10"
-          step="0.5"
-          value={scoreRange}
-          onChange={e => setScoreRange(parseFloat(e.target.value))}
-          className="flex-1"
-          aria-label="Minimum score filter"
-        />
-        <span className="text-sm text-gray-700 dark:text-gray-300 w-8 text-right">{scoreRange}</span>
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+        <div className="space-y-3">
+          {/* First Row: 3 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Filter by</span>
+              <select
+                value={lifecycleFilter}
+                onChange={e => setLifecycleFilter(e.target.value)}
+                className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-1"
+                aria-label="Filter by lifecycle state"
+              >
+                <option value="All">All [States]</option>
+                {LIFECYCLE_ORDER.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+            <select
+              value={riskFilter}
+              onChange={e => setRiskFilter(e.target.value)}
+              className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              aria-label="Filter by risk category"
+            >
+              {riskCategories.map(c => <option key={c} value={c}>{c}</option>)}
+            </select>
+            <select
+              value={reviewFilter}
+              onChange={e => setReviewFilter(e.target.value)}
+              className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              aria-label="Filter by review status"
+            >
+              <option value="All">All [Reviews]</option>
+              <option value="Pending">Pending Reviews</option>
+              <option value="Completed">Completed Reviews</option>
+              <option value="No Review">No Review</option>
+            </select>
+          </div>
+
+          {/* Second Row: 3 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Sort by</span>
+              <select
+                value={sortBy}
+                onChange={e => setSortBy(e.target.value)}
+                className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 flex-1"
+                aria-label="Sort by"
+              >
+                <option value="lifecycle">Lifecycle Stage</option>
+                <option value="score">Score (High to Low)</option>
+                <option value="name">Name (A-Z)</option>
+              </select>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Min Score:</span>
+              <input
+                type="range"
+                min="0"
+                max="10"
+                step="0.5"
+                value={scoreRange}
+                onChange={e => setScoreRange(parseFloat(e.target.value))}
+                className="flex-1"
+                aria-label="Minimum score filter"
+              />
+              <span className="text-sm text-gray-700 dark:text-gray-300 w-8 text-right">{scoreRange}</span>
+            </div>
+            <div className="flex items-center gap-1 justify-end">
+              <button
+                onClick={() => setViewMode('table')}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'table' ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400' : 'text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'}`}
+                aria-label="Table view"
+              >
+                Table
+              </button>
+              <button
+                onClick={() => setViewMode('grouped')}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'grouped' ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400' : 'text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'}`}
+                aria-label="Grouped view"
+              >
+                Grouped
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="flex items-center gap-1 justify-end">
-        <button
-          onClick={() => setViewMode('table')}
-          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'table' ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400' : 'text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'}`}
-          aria-label="Table view"
-        >
-          Table
-        </button>
-        <button
-          onClick={() => setViewMode('grouped')}
-          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'grouped' ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400' : 'text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'}`}
-          aria-label="Grouped view"
-        >
-          Grouped
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
       {/* Main Content */}
       {viewMode === 'table' ? (
@@ -271,7 +271,7 @@ export default function PortfolioDashboard() {
                           to={`/agents/${agent.agent_id}`}
                           className="text-sm text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-bold"
                         >
-                           More Info &gt;
+                          More Info &gt;
                         </Link>
                       </td>
                     </tr>
@@ -323,35 +323,36 @@ export default function PortfolioDashboard() {
 
       {/* Framework Explainer */}
       <SectionCard title="Framework Reference" collapsible defaultOpen={true}>
-          <div>
-            <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Metric Classification</h4>
-            <ul className="space-y-1">
-              <li><strong>Critical:</strong> Completeness, Accuracy, Faithfulness, Safety Score, Graceful Fallback</li>
-              <li><strong>Important:</strong> Task Completion Rate, Answer Relevancy, Response Clarity, Latency (P95), Observability Implementation</li>
-              <li><strong>Informational:</strong> Cost per Conversation</li>
-              
-            </ul>
-          </div>
-          <div>
-            <br></br>
-            <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Promotion Thresholds</h4>
-            <ul className="space-y-1">
-              <li><strong>Beta:</strong> Overall Score ≥ 7.0 AND Critical metrics ≥ 7.0</li>
-              <li><strong>GA:</strong> Overall Score ≥ 8.0 AND Critical metrics ≥ 8.0 AND Observability Implementation = 1</li>
-            </ul>
-          </div>
-        
+        <div>
+          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Metric Classification</h4>
+          <ul className="space-y-1">
+            <li><strong>Critical:</strong> Completeness, Accuracy, Faithfulness, Safety Score, Graceful Fallback</li>
+            <li><strong>Important:</strong> Task Completion Rate, Answer Relevancy, Response Clarity, Latency (P95), Observability Implementation</li>
+            <li><strong>Informational:</strong> Cost per Conversation</li>
+
+          </ul>
+        </div>
         <div>
           <br></br>
-            <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Review Bands</h4>
-            <ul className="space-y-1">
-              <li><strong>Beta Review:</strong> 6.9 ≤ Overall Score ≤ 7.1 OR Any critical metric between 6.9 and 7.1</li>
-              <li><strong>GA Review:</strong> 7.9 ≤ Overall Score ≤ 8.1 OR Any critical metric between 7.9 and 8.1</li>
-              <li><strong>Operational Review:</strong> Triggered when Latency (P95) &gt; 5000 ms</li>
-              <li><strong>Governance Review:</strong> Triggered when the agent is evaluated for GA promotion and Observability Implementation = 0</li>
-              <li><strong>Regulated Risk Policy:</strong> All <em>Regulated</em> agents targeting GA promotion auto-trigger a mandatory Governance &amp; Compliance Review regardless of evaluation score</li>
-            </ul>
-          </div>
+          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Promotion Thresholds</h4>
+          <ul className="space-y-1">
+            <li><strong>Beta:</strong> Overall Score ≥ 7.0 AND Critical metrics ≥ 7.0</li>
+            <li><strong>GA:</strong> Overall Score ≥ 8.0 AND Critical metrics ≥ 8.0 AND Observability Implementation = 1</li>
+          </ul>
+        </div>
+
+        <div>
+          <br></br>
+          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Review Bands</h4>
+          <ul className="space-y-1">
+            <li><strong>Beta Review:</strong> 6.9 ≤ Overall Score ≤ 7.1 OR Any critical metric between 6.9 and 7.1</li>
+            <li><strong>GA Review:</strong> 7.9 ≤ Overall Score ≤ 8.1 OR Any critical metric between 7.9 and 8.1</li>
+            <li><strong>Operational Review:</strong> Triggered when Latency (P95) &gt; 5000 ms</li>
+            <li><strong>Governance Review:</strong> Triggered when the agent is evaluated for GA promotion and Observability Implementation = 0</li>
+            <li><strong>Regulated Risk Policy:</strong> All <em>Regulated</em> agents targeting GA promotion auto-trigger a mandatory Governance &amp; Compliance Review regardless of evaluation score</li>
+
+          </ul>
+        </div>
       </SectionCard>
     </div>
   );
