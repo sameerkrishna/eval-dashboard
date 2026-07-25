@@ -40,5 +40,19 @@
 "review_timestamp": null,
 "reviewer": null,
 "review_notes": null
+},
+{
+"review_id": 4,
+"agent_id": 11,
+"review_type": "Governance",
+"review_reason": "Mandatory Regulated Risk Governance Review required for GA promotion",
+"previous_state": "Beta",
+"current_state": "Beta",
+"next_state": "GA",
+"review_status": "Completed",
+"action_taken": "Approved",
+"review_timestamp": "2026-06-20T14:30:00Z",
+"reviewer": "Reviewer A",
+"review_notes": "Mandatory Regulated Risk Governance Review approved. All compliance, safety guardrails, and audit controls verified for GA release."
 }
 ]
