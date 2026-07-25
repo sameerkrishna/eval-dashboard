@@ -35,11 +35,11 @@
 "previous_state":"Beta",
 "current_state": "Beta",
 "next_state": "GA",
-"review_status": "Completed",
-"action_taken": "Rejected",
-"review_timestamp": "2026-07-24T14:30:00Z",
-"reviewer": "Reviewer A",
-"review_notes": "Mandatory review triggered as the agent is of risk type:regulated. All compliance, safety guardrails, and audit controls verified. Approved for GA release."
+"review_status": "Pending",
+"action_taken": null,
+"review_timestamp": null,
+"reviewer": null,
+"review_notes": null
 },
 {
 "review_id": 4,
