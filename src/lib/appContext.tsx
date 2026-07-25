@@ -140,12 +140,24 @@ export function AppProvider({ children, initialData }: { children: React.ReactNo
           } else if (agent.current_lifecycle_state === 'Beta') {
             newState = 'GA';
             newNextState = 'None';
-            newEvalResult = 'GA Compliant';
+            newEvalResult = 'Approved for GA';
           }
         } else if (action === 'Rejected') {
-          newEvalResult = 'Needs Improvement';
+          if (agent.current_lifecycle_state === 'In Dev') {
+            newEvalResult = 'Rejected for Beta, needs improvement';
+          } else if (agent.current_lifecycle_state === 'Beta') {
+            newEvalResult = 'Rejected for GA, needs improvement';
+          } else {
+            newEvalResult = 'Needs Improvement';
+          }
         } else if (action === 'On Hold') {
-          newEvalResult = 'Needs Improvement';
+          if (agent.current_lifecycle_state === 'In Dev') {
+            newEvalResult = 'On Hold for Beta, needs improvement';
+          } else if (agent.current_lifecycle_state === 'Beta') {
+            newEvalResult = 'On Hold for GA, needs improvement';
+          } else {
+            newEvalResult = 'Needs Improvement';
+          }
         }
 
         const completedReview: AgentReview = {

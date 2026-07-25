@@ -157,6 +157,8 @@ export interface AgentExplanationContext {
   human_review_previous_state: string | null;
   human_review_target_state: string | null;
   human_review_notes: string | null;
+  quantitative_threshold_result: string;
+  governance_status: string;
 }
 
 export interface ExplanationCacheEntry {

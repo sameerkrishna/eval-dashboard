@@ -28,6 +28,8 @@ IMPORTANT RULES
 7. Write in a professional tone.
 8. Keep explanations concise but complete.
 9. Output plain text only.
+10. CRITICAL CLARITY RULE: Clearly distinguish between Quantitative Metric Evaluation (metric thresholds and scores) and Human Governance Review (human approvals or rejections). Do not confuse human rejections with metric threshold failures.
+11. NATURAL LANGUAGE RULE: Write all explanations in natural, fluent executive prose. Do NOT quote prompt variable names (such as human_review_notes, review_reason, eval_result) or use mechanical meta-phrases like "The reason for approval using Human Review Notes is" or "using human_review_notes". Seamlessly weave reviewer notes and findings into clean narrative sentences (e.g., "The reviewer approved the promotion, noting: '...'").
 
 EXPLANATION STRUCTURE
 
@@ -39,100 +41,73 @@ Start by explaining:
 
 * Current lifecycle stage
 * Intended next stage
-* Overall evaluation outcome
+* Overall evaluation and governance outcome
 
-Examples:
-
-"The agent is currently in Beta and is being evaluated for promotion to GA."
-
-"The agent remains in In Dev because it has not yet satisfied the requirements for promotion to Beta."
+Guidelines for Section A:
+- If Human Review Action is "Rejected" or Evaluation Result indicates a rejection (e.g., "Rejected for GA"):
+  State: "The agent is currently in [Current Stage] and was evaluated for promotion to [Target Stage]. While it passed quantitative score thresholds (if applicable), promotion to [Target Stage] was Rejected following human governance review."
+- If Review Status is "Pending Review":
+  State: "The agent is currently in [Current Stage] and is being evaluated for promotion to [Target Stage]. It has met quantitative thresholds for [Target Stage], but promotion is Pending human [Review Type] review."
+- If Human Review Action is "Approved":
+  State: "The agent is currently in [Current Stage] and was evaluated for promotion to [Target Stage]. The promotion has been Approved following human governance review."
 
 B. EVALUATION SUMMARY
 
 Explain:
-
-* Overall score
-* Explain whether the agent passed or failed the required thresholds.
-* Whether critical metrics passed or failed
+* Overall score (out of 10)
+* Quantitative metric threshold outcome (whether all critical metrics passed or any failed).
+* Clarify that quantitative metric evaluation reflects metric thresholds, distinct from human governance review decisions.
 
 If all critical metrics passed:
-
 "All critical evaluation metrics met the required threshold."
 
 If critical metrics failed:
-
 Explicitly identify the failed metrics and explain their impact.
 
 C. PERFORMANCE ANALYSIS
 
 Explain:
-
 * Strongest metrics
 * Weakest metrics
 
-Do not list every metric.
-
-Focus only on the metrics most relevant to the lifecycle outcome.
+Do not list every metric. Focus only on the metrics most relevant to the lifecycle outcome.
 
 D. REVIEW ANALYSIS
 
-If review_required = false:
-
+If review_status = "No Active Review" and no review was triggered:
 State that no human review was required.
 
-If review_required = true:
-
+If a human review was triggered:
 Explain:
-
-* Review trigger
-* Why the review was required
-
-Examples:
-
-* Evaluation Review
-* Operational Review
-* Governance Review
+* Review type (Evaluation, Operational, or Governance)
+* Specific review reason / trigger (e.g., latency threshold, safety performance, or mandatory regulated risk governance review)
 
 E. HUMAN DECISION
 
-If no human review action is recorded:
-
-State that no human review has been recorded.
+If no human review action is recorded (Pending Review):
+State clearly that no human review decision has been recorded yet and the agent is awaiting human review.
 
 If human_review_action = Approved:
-
 Explain:
-
-* Human reviewer approved the promotion from previous_lifecycle_state to the intended target state
-* Reason for approval using human_review_notes
+* State that the human reviewer approved the promotion from previous state to the target state.
+* Seamlessly integrate the reviewer's justification (e.g., "The human reviewer approved the promotion, noting: '[Human Review Notes]'"). Avoid robotic phrasing like "The reason for approval using Human Review Notes is".
 
 If human_review_action = Rejected:
-
 Explain:
-
-* Human reviewer rejected the promotion from previous_lifecycle_state to the intended target state
-* Reason for rejection using human_review_notes
+* State that the human reviewer rejected the promotion from previous state to the target state.
+* Seamlessly integrate the reviewer's feedback (e.g., "The human reviewer rejected the promotion, citing: '[Human Review Notes]'"). Avoid robotic phrasing like "The reason for rejection using Human Review Notes is".
 
 If human_review_action = On Hold:
-
 Explain:
-
-* Human reviewer placed the agent on hold from previous_lifecycle_state to the intended target state
-* Reason for the hold using human_review_notes
-
-If human_review_action = Pending Review:
-
-State that the agent is awaiting human review.
+* State that the human reviewer placed the promotion on hold.
+* Seamlessly integrate the reviewer's hold rationale (e.g., "The human reviewer placed the promotion on hold, noting: '[Human Review Notes]'"). Avoid robotic phrasing.
 
 F. NEXT STEPS
 
-Conclude with:
-
-* What is required for the agent to advance
-  OR
-* Why the agent was promoted
-  OR
-* Why the agent remains in its current stage
+Conclude with a clear statement explaining:
+* Why the agent remains in its current stage (e.g., rejected by human reviewer due to missing controls, or awaiting pending human review sign-off).
+* OR what is required for the agent to advance.
+* OR that the agent has successfully been promoted.
 
 OUTPUT LENGTH
 
@@ -162,9 +137,11 @@ function getCacheKey(agentId: string, contextHash: string): string {
 function buildPrompt(context: AgentExplanationContext): string {
   return `Agent: ${context.agent_name}
 Current Stage: ${context.current_lifecycle_state}
-Overall Score: ${context.overall_score}/10
 Promotion Target: ${context.promotion_target}
+Overall Score: ${context.overall_score}/10
 Evaluation Result: ${context.eval_result}
+Quantitative Threshold Result: ${context.quantitative_threshold_result}
+Governance Status: ${context.governance_status}
 Review Status: ${context.review_status}
 Review Type: ${context.review_type || 'None'}
 Review Reason: ${context.review_reason || 'N/A'}
@@ -202,7 +179,8 @@ export function generateFallbackExplanation(context: AgentExplanationContext): s
   paragraphs.push(`${strengths} ${weaknesses}`);
 
   if (context.human_review_action) {
-    paragraphs.push(`A human review was completed on this agent. The reviewer ${context.human_review_action.toLowerCase()} the promotion from ${context.human_review_previous_state || 'N/A'} to ${context.human_review_target_state || 'N/A'}. ${context.human_review_notes ? `Review note: ${context.human_review_notes}` : ''}`);
+    const actionText = context.human_review_action === 'Approved' ? 'approved' : context.human_review_action === 'Rejected' ? 'rejected' : 'placed on hold';
+    paragraphs.push(`Human Review: The reviewer ${actionText} the promotion from ${context.human_review_previous_state || 'N/A'} to ${context.human_review_target_state || 'N/A'}.${context.human_review_notes ? ` Reviewer notes: ${context.human_review_notes}` : ''}`);
   }
 
   if (context.critical_metrics_failed.length > 0) {

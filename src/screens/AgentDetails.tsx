@@ -89,7 +89,7 @@ function AgentHeaderCard({ agent }: { agent: EnrichedAgent }) {
             <StatusBadge label={agent.current_lifecycle_state} variant={getLifecycleVariant(agent.current_lifecycle_state)} />
             <span className="text-gray-400 dark:text-gray-500">→</span>
             <StatusBadge label={agent.next_lifecycle_state} variant={getLifecycleVariant(agent.next_lifecycle_state)} />
-            <StatusBadge label={agent.eval_result} variant={agent.eval_result.includes('Ready') || agent.eval_result === 'GA Compliant' ? 'success' : 'warning'} />
+            <StatusBadge label={agent.eval_result} variant={agent.eval_result.includes('Ready') || agent.eval_result.includes('Approved') || agent.eval_result === 'GA Compliant' ? 'success' : 'warning'} />
             {agent.pending_review && <StatusBadge label="Pending Review" variant="pending" />}
           </div>
         </div>
@@ -300,7 +300,7 @@ function LifecycleSummaryCard({ agent }: { agent: EnrichedAgent }) {
         </div>
         <div className="p-3 bg-gray-50 dark:bg-gray-900/30 rounded-md">
           <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Eligibility</div>
-          <div className={`mt-1 text-lg font-semibold ${agent.eval_result.includes('Ready') || agent.eval_result === 'GA Compliant' ? 'text-success-600 dark:text-success-400' : 'text-warning-600 dark:text-warning-400'}`}>
+          <div className={`mt-1 text-lg font-semibold ${agent.eval_result.includes('Ready') || agent.eval_result.includes('Approved') || agent.eval_result === 'GA Compliant' ? 'text-success-600 dark:text-success-400' : 'text-warning-600 dark:text-warning-400'}`}>
             {agent.eval_result}
           </div>
         </div>
