@@ -95,7 +95,7 @@
 "needs_review": false,
 "review_status": "Completed",
 "review_type": "Governance",
-"summary": "The Customer Support Agent consistently delivers accurate, clear, and actionable responses across common customer service workflows. The agent meets all GA quality requirements, demonstrating strong performance in accuracy, grounding, safety, and issue resolution. However, observability controls have not yet been implemented. Human review is required to determine whether a temporary release exception should be granted while monitoring capabilities are completed."
+"summary": "The Customer Support Agent consistently delivers accurate, clear, and actionable responses across common customer service workflows. The agent meets all GA quality requirements, demonstrating strong performance in accuracy, grounding, safety, and issue resolution. However, observability controls have not yet been implemented. Human review was completed and promotion to GA was rejected due to missing observability controls."
 },
 {
 "agent_id": 8,
