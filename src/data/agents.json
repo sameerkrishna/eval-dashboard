@@ -91,9 +91,9 @@
 "next_state": "GA",
 "overall_score": 8.33,
 "latest_eval_date": "2026-06-22",
-"eval_result": "Pass",
-"needs_review": true,
-"review_status": "Pending",
+"eval_result": "Fail",
+"needs_review": false,
+"review_status": "Completed",
 "review_type": "Governance",
 "summary": "The Customer Support Agent consistently delivers accurate, clear, and actionable responses across common customer service workflows. The agent meets all GA quality requirements, demonstrating strong performance in accuracy, grounding, safety, and issue resolution. However, observability controls have not yet been implemented. Human review is required to determine whether a temporary release exception should be granted while monitoring capabilities are completed."
 },
