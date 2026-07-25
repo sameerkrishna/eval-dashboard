@@ -204,7 +204,7 @@ function transformAgents(raw: RawAgent[]): Agent[] {
       risk_category: a.risk_category,
       current_lifecycle_state: a.current_state,
       next_lifecycle_state: a.next_state === 'None' ? 'None' : a.next_state,
-      eval_result: a.eval_result === 'Pass' ? (a.next_state === 'None' ? 'GA Compliant' : 'Ready for ' + a.next_state) : 'Needs Improvement',
+      eval_result: a.eval_result === 'Pass' ? (a.next_state === 'None' ? 'Approved for GA' : 'Ready for ' + a.next_state) : 'Needs Improvement',
       overall_score: a.overall_score,
       critical_metrics: criticalMetrics,
       status_badges: statusBadges,
