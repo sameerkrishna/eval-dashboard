@@ -53,6 +53,6 @@
         "action_taken": "Approved",
         "review_timestamp": "2026-07-25T14:30:00Z",
         "reviewer": "Reviewer B",
-        "review_notes": "Mandatory review triggered as the agent is of risk type:regulated. All compliance, safety guardrails, and audit controls verified. Approved for GA release."
+        "review_notes": "A mandatory review was triggered due to the agent’s regulated-risk classification. All compliance requirements, safety guardrails, and audit controls verified. Approved for GA release."
     }
 ]
