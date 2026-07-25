@@ -140,7 +140,7 @@ export function AppProvider({ children, initialData }: { children: React.ReactNo
           } else if (agent.current_lifecycle_state === 'Beta') {
             newState = 'GA';
             newNextState = 'None';
-            newEvalResult = 'GA Compliant';
+            newEvalResult = 'Approved for GA';
           }
         } else if (action === 'Rejected') {
           if (agent.current_lifecycle_state === 'In Dev') {
