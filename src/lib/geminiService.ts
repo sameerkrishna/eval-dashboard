@@ -29,6 +29,7 @@ IMPORTANT RULES
 8. Keep explanations concise but complete.
 9. Output plain text only.
 10. CRITICAL CLARITY RULE: Clearly distinguish between Quantitative Metric Evaluation (metric thresholds and scores) and Human Governance Review (human approvals or rejections). Do not confuse human rejections with metric threshold failures.
+11. NATURAL LANGUAGE RULE: Write all explanations in natural, fluent executive prose. Do NOT quote prompt variable names (such as human_review_notes, review_reason, eval_result) or use mechanical meta-phrases like "The reason for approval using Human Review Notes is" or "using human_review_notes". Seamlessly weave reviewer notes and findings into clean narrative sentences (e.g., "The reviewer approved the promotion, noting: '...'").
 
 EXPLANATION STRUCTURE
 
@@ -84,22 +85,22 @@ Explain:
 E. HUMAN DECISION
 
 If no human review action is recorded (Pending Review):
-State that no human review decision has been recorded yet, and the agent is awaiting human review.
+State clearly that no human review decision has been recorded yet and the agent is awaiting human review.
 
 If human_review_action = Approved:
 Explain:
-* Human reviewer approved the promotion from previous state to the target state.
-* Reason for approval using Human Review Notes.
+* State that the human reviewer approved the promotion from previous state to the target state.
+* Seamlessly integrate the reviewer's justification (e.g., "The human reviewer approved the promotion, noting: '[Human Review Notes]'"). Avoid robotic phrasing like "The reason for approval using Human Review Notes is".
 
 If human_review_action = Rejected:
 Explain:
-* Human reviewer rejected the promotion from previous state to the target state.
-* Reason for rejection using Human Review Notes.
+* State that the human reviewer rejected the promotion from previous state to the target state.
+* Seamlessly integrate the reviewer's feedback (e.g., "The human reviewer rejected the promotion, citing: '[Human Review Notes]'"). Avoid robotic phrasing like "The reason for rejection using Human Review Notes is".
 
 If human_review_action = On Hold:
 Explain:
-* Human reviewer placed the promotion on hold.
-* Reason for the hold using Human Review Notes.
+* State that the human reviewer placed the promotion on hold.
+* Seamlessly integrate the reviewer's hold rationale (e.g., "The human reviewer placed the promotion on hold, noting: '[Human Review Notes]'"). Avoid robotic phrasing.
 
 F. NEXT STEPS
 
@@ -178,7 +179,8 @@ export function generateFallbackExplanation(context: AgentExplanationContext): s
   paragraphs.push(`${strengths} ${weaknesses}`);
 
   if (context.human_review_action) {
-    paragraphs.push(`A human review was completed on this agent. The reviewer ${context.human_review_action.toLowerCase()} the promotion from ${context.human_review_previous_state || 'N/A'} to ${context.human_review_target_state || 'N/A'}. ${context.human_review_notes ? `Review note: ${context.human_review_notes}` : ''}`);
+    const actionText = context.human_review_action === 'Approved' ? 'approved' : context.human_review_action === 'Rejected' ? 'rejected' : 'placed on hold';
+    paragraphs.push(`Human Review: The reviewer ${actionText} the promotion from ${context.human_review_previous_state || 'N/A'} to ${context.human_review_target_state || 'N/A'}.${context.human_review_notes ? ` Reviewer notes: ${context.human_review_notes}` : ''}`);
   }
 
   if (context.critical_metrics_failed.length > 0) {
