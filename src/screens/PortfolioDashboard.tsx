@@ -273,7 +273,7 @@ export default function PortfolioDashboard() {
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm whitespace-nowrap"
                         >
                           <span>More Info</span>
-                          <ChevronRight className="w-3.5 h-3.5" />
+                          <ChevronRight className="w-4 h-4" />
                         </Link>
                       </td>
                     </tr>
@@ -315,7 +315,7 @@ export default function PortfolioDashboard() {
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm whitespace-nowrap"
                       >
                         <span>More Info</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
+                        <ChevronRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
