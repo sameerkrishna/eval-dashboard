@@ -200,6 +200,17 @@ export function buildExplanationContext(agent: EnrichedAgent): AgentExplanationC
 
   const lastCompletedReview = agent.completed_reviews[agent.completed_reviews.length - 1] ?? null;
 
+  const quantitativeThresholdResult = agent.critical_metrics_failed.length === 0
+    ? 'Passed All Quantitative Thresholds'
+    : `Failed Critical Metrics (${agent.critical_metrics_failed.join(', ')})`;
+
+  let governanceStatus = 'No Review Needed';
+  if (agent.pending_review) {
+    governanceStatus = `Pending ${agent.pending_review.review_type} Review`;
+  } else if (lastCompletedReview) {
+    governanceStatus = `${lastCompletedReview.reviewer_action} in ${lastCompletedReview.review_type} Review`;
+  }
+
   return {
     agent_name: agent.agent_name,
     current_lifecycle_state: agent.current_lifecycle_state,
@@ -218,5 +229,7 @@ export function buildExplanationContext(agent: EnrichedAgent): AgentExplanationC
     human_review_previous_state: lastCompletedReview?.previous_lifecycle_state ?? null,
     human_review_target_state: lastCompletedReview?.next_lifecycle_state ?? null,
     human_review_notes: lastCompletedReview?.reviewer_notes ?? null,
+    quantitative_threshold_result: quantitativeThresholdResult,
+    governance_status: governanceStatus,
   };
 }
