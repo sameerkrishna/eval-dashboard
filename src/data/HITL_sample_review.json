@@ -65,5 +65,36 @@
 	"reviewer_note": "No automated alerting exists for failures, degraded performance, or abnormal system behavior."
 	}
 ]
+},
+{
+"agent_id": 11,
+"sample_type": "Governance",
+"action_required": false,
+"samples": [
+	{
+	"sample_id": 9,
+	"control": "Monitoring",
+	"status": "Implemented",
+	"reviewer_note": "Production monitoring and operational health dashboards active."
+	},
+	{
+	"sample_id": 10,
+	"control": "Tracing",
+	"status": "Implemented",
+	"reviewer_note": "Distributed tracing configured across all regulated policy endpoints."
+	},
+	{
+	"sample_id": 11,
+	"control": "Audit Logs",
+	"status": "Implemented",
+	"reviewer_note": "Full audit log coverage active with compliance data retention."
+	},
+	{
+	"sample_id": 12,
+	"control": "Alerts",
+	"status": "Configured",
+	"reviewer_note": "Automated security alert triggers verified for policy violations."
+	}
+]
 }
 ]
