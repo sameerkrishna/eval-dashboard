@@ -182,7 +182,7 @@ export default function ReviewQueue() {
                         <td className="px-4 py-3 text-right">
                           <button
                             onClick={() => setExpandedReview(isExpanded ? null : item.review_id)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors whitespace-nowrap"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors whitespace-nowrap"
                             aria-label={isExpanded ? 'Hide details' : 'Show detailed info'}
                           >
                             <span>{isExpanded ? 'Hide' : 'Detailed Info'}</span>
@@ -263,11 +263,10 @@ function ExpandedReviewCard({
           value={notes}
           onChange={e => onNotesChange(e.target.value)}
           rows={3}
-          className={`w-full px-3 py-2 rounded-md border text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-            notes.trim() === ''
+          className={`w-full px-3 py-2 rounded-md border text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ${notes.trim() === ''
               ? 'border-error-300 dark:border-error-700 bg-error-50 dark:bg-error-900/20'
               : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100'
-          }`}
+            }`}
           placeholder="Review justification required before taking action..."
           aria-label="Reviewer justification (required)"
         />
@@ -399,8 +398,8 @@ function OperationalEvidence({ agent }: { agent: EnrichedAgent }) {
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-700 dark:text-gray-300"> Note</span>
             <p className="font-medium text-gray-900 dark:text-white">
-              {opSamples.length > 0 && opSamples[0].reviewer_note 
-                ? opSamples[0].reviewer_note 
+              {opSamples.length > 0 && opSamples[0].reviewer_note
+                ? opSamples[0].reviewer_note
                 : 'No reviewer justification provided'}
             </p>
           </div>
