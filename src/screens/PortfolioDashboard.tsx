@@ -271,7 +271,7 @@ export default function PortfolioDashboard() {
                           to={`/agents/${agent.agent_id}`}
                           className="text-sm text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-bold"
                         >
-                           Read More &gt;
+                           More Info &gt;
                         </Link>
                       </td>
                     </tr>
