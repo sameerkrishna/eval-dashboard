@@ -17,7 +17,7 @@ export default function PortfolioDashboard() {
   const [sortBy, setSortBy] = useState<string>('lifecycle');
   const [viewMode, setViewMode] = useState<'table' | 'grouped'>('table');
 
-  const riskCategories = useMemo(() => ['All', ...Array.from(new Set(agents.map(a => a.risk_category)))], [agents]);
+  const riskCategories = useMemo(() => ['All [Risk Category]', ...Array.from(new Set(agents.map(a => a.risk_category)))], [agents]);
 
   const filteredAgents = useMemo(() => {
     let filtered = [...agents];
