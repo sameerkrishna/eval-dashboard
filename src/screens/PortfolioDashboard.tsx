@@ -142,7 +142,7 @@ export default function PortfolioDashboard() {
               className="px-3 py-2 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-label="Filter by risk category"
             >
-              {riskCategories.map(c => <option key={c} value={c}>{c}</option>)}
+              {riskCategories.map(c => <option key={c} value={c === 'All [Risk Category]' ? 'All' : c}>{c}</option>)}
             </select>
             <select
               value={reviewFilter}
