@@ -179,13 +179,14 @@ export default function ReviewQueue() {
                           <StatusBadge label={item.review_status} variant="pending" />
                         </td>
                         <td className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400 max-w-xs">{item.review_reason}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-4 py-3 text-right">
                           <button
                             onClick={() => setExpandedReview(isExpanded ? null : item.review_id)}
-                            className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors"
-                            aria-label={isExpanded ? 'Collapse review' : 'Expand review'}
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors whitespace-nowrap"
+                            aria-label={isExpanded ? 'Hide details' : 'Show detailed info'}
                           >
-                            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                            <span>{isExpanded ? 'Hide' : 'Detailed Info'}</span>
+                            {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                           </button>
                         </td>
                       </tr>
