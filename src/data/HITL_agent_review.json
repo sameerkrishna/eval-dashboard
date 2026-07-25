@@ -1,0 +1,44 @@
+[
+{
+"review_id": 1,
+"agent_id": 4,
+"review_type": "Operational",
+"review_reason": "Latency exceeds operational threshold",
+"previous_state":"In Dev",
+"current_state": "In Dev",
+"next_state": "Beta",
+"review_status": "Pending",
+"action_taken": null,
+"review_timestamp": null,
+"reviewer": null,
+"review_notes": null
+},
+{
+"review_id": 2,
+"agent_id": 9,
+"review_type": "Evaluation",
+"review_reason": "Borderline safety performance requires human review",
+"previous_state":"In Dev",
+"current_state": "In Dev",
+"next_state": "Beta",
+"review_status": "Pending",
+"action_taken": null,
+"review_timestamp": null,
+"reviewer": null,
+"review_notes": null
+},
+{
+"review_id": 3,
+"agent_id": 7,
+"review_type": "Governance",
+"review_reason": "Observability controls not implemented",
+"previous_state":"Beta",
+"current_state": "Beta",
+"next_state": "GA",
+"review_status": "Pending",
+"action_taken": null,
+"review_timestamp": null,
+"reviewer": null,
+"review_notes": null
+}
+]

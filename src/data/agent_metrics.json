@@ -1,0 +1,189 @@
+[
+{
+"agent_id": 1,
+"agent_name": "Coding Agent",
+"metrics": {
+"Completeness": 7.2,
+"Accuracy": 7.3,
+"Answer Relevancy": 7.7,
+"Faithfulness": 7.5,
+"Response Clarity": 7.0,
+"Safety Score": 8.3,
+"Graceful Fallback": 7.2,
+"Latency": 2800,
+"Task Completion Rate": 6.3,
+"Cost per Conversation": 0.20,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 2,
+"agent_name": "Market Intelligence Agent",
+"metrics": {
+"Completeness": 8.3,
+"Accuracy": 8.4,
+"Answer Relevancy": 9.1,
+"Faithfulness": 8.6,
+"Response Clarity": 8.4,
+"Safety Score": 8.9,
+"Graceful Fallback": 8.3,
+"Latency": 4850,
+"Task Completion Rate": 8.8,
+"Cost per Conversation": 0.26,
+"Observability Implementation": 1
+}
+},
+{
+"agent_id": 3,
+"agent_name": "Internal Knowledge Agent",
+"metrics": {
+"Completeness": 8.5,
+"Accuracy": 8.8,
+"Answer Relevancy": 8.6,
+"Faithfulness": 9.2,
+"Response Clarity": 8.5,
+"Safety Score": 9.0,
+"Graceful Fallback": 8.8,
+"Latency": 1910,
+"Task Completion Rate": 8.9,
+"Cost per Conversation": 0.08,
+"Observability Implementation": 1
+}
+},
+{
+"agent_id": 4,
+"agent_name": "Research Assistant",
+"metrics": {
+"Completeness": 7.3,
+"Accuracy": 7.3,
+"Answer Relevancy": 7.6,
+"Faithfulness": 7.4,
+"Response Clarity": 6.7,
+"Safety Score": 7.5,
+"Graceful Fallback": 7.4,
+"Latency": 6300,
+"Task Completion Rate": 7.5,
+"Cost per Conversation": 0.37,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 5,
+"agent_name": "HR Policy Agent",
+"metrics": {
+"Completeness": 7.0,
+"Accuracy": 7.2,
+"Answer Relevancy": 7.5,
+"Faithfulness": 7.6,
+"Response Clarity": 7.5,
+"Safety Score": 8.3,
+"Graceful Fallback": 8.3,
+"Latency": 1490,
+"Task Completion Rate": 7.4,
+"Cost per Conversation": 0.06,
+"Observability Implementation": 1
+}
+},
+{
+"agent_id": 6,
+"agent_name": "FAQ Agent",
+"metrics": {
+"Completeness": 6.0,
+"Accuracy": 6.1,
+"Answer Relevancy": 7.1,
+"Faithfulness": 6.6,
+"Response Clarity": 7.4,
+"Safety Score": 6.7,
+"Graceful Fallback": 7.5,
+"Latency": 960,
+"Task Completion Rate": 6.7,
+"Cost per Conversation": 0.03,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 7,
+"agent_name": "Customer Support Agent",
+"metrics": {
+"Completeness": 8.3,
+"Accuracy": 8.2,
+"Answer Relevancy": 8.0,
+"Faithfulness": 8.3,
+"Response Clarity": 8.5,
+"Safety Score": 8.4,
+"Graceful Fallback": 8.3,
+"Latency": 1760,
+"Task Completion Rate": 8.6,
+"Cost per Conversation": 0.12,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 8,
+"agent_name": "Product Onboarding Agent",
+"metrics": {
+"Completeness": 5.5,
+"Accuracy": 6.2,
+"Answer Relevancy": 6.4,
+"Faithfulness": 7.2,
+"Response Clarity": 6.1,
+"Safety Score": 7.4,
+"Graceful Fallback": 6.3,
+"Latency": 1330,
+"Task Completion Rate": 5.9,
+"Cost per Conversation": 0.07,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 9,
+"agent_name": "Healthcare Benefits Agent",
+"metrics": {
+"Completeness": 7.4,
+"Accuracy": 7.6,
+"Answer Relevancy": 8.2,
+"Faithfulness": 7.1,
+"Response Clarity": 7.8,
+"Safety Score": 7.1,
+"Graceful Fallback": 8.1,
+"Latency": 2400,
+"Task Completion Rate": 7.4,
+"Cost per Conversation": 0.09,
+"Observability Implementation": 0
+}
+},
+{
+"agent_id": 10,
+"agent_name": "Investment Advisor Assistant",
+"metrics": {
+"Completeness": 7.5,
+"Accuracy": 7.4,
+"Answer Relevancy": 7.7,
+"Faithfulness": 7.3,
+"Response Clarity": 7.1,
+"Safety Score": 7.2,
+"Graceful Fallback": 7.8,
+"Latency": 3170,
+"Task Completion Rate": 8.0,
+"Cost per Conversation": 0.16,
+"Observability Implementation": 1
+}
+},
+{
+"agent_id": 11,
+"agent_name": "Security Policy Assistant",
+"metrics": {
+"Completeness": 8.3,
+"Accuracy": 8.5,
+"Answer Relevancy": 8.1,
+"Faithfulness": 8.4,
+"Response Clarity": 8.2,
+"Safety Score": 9.0,
+"Graceful Fallback": 8.4,
+"Latency": 2560,
+"Task Completion Rate": 8.3,
+"Cost per Conversation": 0.11,
+"Observability Implementation": 1
+}
+}
+]

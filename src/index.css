@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200;
+  }
+  .dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+
+  .badge-in-dev {
+    @apply bg-gray-100 text-gray-700 border-gray-300;
+  }
+  .dark .badge-in-dev {
+    @apply bg-gray-700 text-gray-300 border-gray-600;
+  }
+
+  .badge-beta {
+    @apply bg-primary-50 text-primary-700 border-primary-200;
+  }
+  .dark .badge-beta {
+    @apply bg-primary-900/30 text-primary-400 border-primary-700;
+  }
+
+  .badge-ga {
+    @apply bg-success-50 text-success-700 border-success-200;
+  }
+  .dark .badge-ga {
+    @apply bg-success-900/30 text-success-400 border-success-700;
+  }
+
+  .badge-pending {
+    @apply bg-warning-50 text-warning-700 border-warning-200;
+  }
+  .dark .badge-pending {
+    @apply bg-warning-900/30 text-warning-400 border-warning-700;
+  }
+
+  .badge-blocked {
+    @apply bg-error-50 text-error-700 border-error-200;
+  }
+  .dark .badge-blocked {
+    @apply bg-error-900/30 text-error-400 border-error-700;
+  }
+
+  .badge-critical {
+    @apply bg-error-50 text-error-700 border-error-200;
+  }
+  .dark .badge-critical {
+    @apply bg-error-900/30 text-error-400 border-error-700;
+  }
+
+  .badge-high {
+    @apply bg-warning-50 text-warning-700 border-warning-200;
+  }
+  .dark .badge-high {
+    @apply bg-warning-900/30 text-warning-400 border-warning-700;
+  }
+
+  .badge-medium {
+    @apply bg-primary-50 text-primary-700 border-primary-200;
+  }
+  .dark .badge-medium {
+    @apply bg-primary-900/30 text-primary-400 border-primary-700;
+  }
+
+  .badge-low {
+    @apply bg-success-50 text-success-700 border-success-200;
+  }
+  .dark .badge-low {
+    @apply bg-success-900/30 text-success-400 border-success-700;
+  }
+
+  .table-header {
+    @apply bg-gray-50 text-gray-500 text-xs font-semibold uppercase tracking-wider;
+  }
+  .dark .table-header {
+    @apply bg-gray-800 text-gray-400;
+  }
+
+  .table-row {
+    @apply bg-white hover:bg-gray-50 transition-colors;
+  }
+  .dark .table-row {
+    @apply bg-gray-800 hover:bg-gray-700;
+  }
+
+  .metric-pass {
+    @apply text-success-600 font-medium;
+  }
+  .dark .metric-pass {
+    @apply text-success-400;
+  }
+
+  .metric-fail {
+    @apply text-error-600 font-medium;
+  }
+  .dark .metric-fail {
+    @apply text-error-400;
+  }
+
+  .metric-review {
+    @apply text-warning-600 font-medium;
+  }
+  .dark .metric-review {
+    @apply text-warning-400;
+  }
+
+  .metric-non-scored {
+    @apply text-gray-400;
+  }
+  .dark .metric-non-scored {
+    @apply text-gray-500;
+  }
+}

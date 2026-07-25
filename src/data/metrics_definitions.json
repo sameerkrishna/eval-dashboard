@@ -1,0 +1,68 @@
+[
+{
+"metric_id": 1,
+"metric_name": "Completeness",
+"category": "Answer Quality",
+"severity": "Critical"
+},
+{
+"metric_id": 2,
+"metric_name": "Accuracy",
+"category": "Answer Quality",
+"severity": "Critical"
+},
+{
+"metric_id": 3,
+"metric_name": "Answer Relevancy",
+"category": "Answer Quality",
+"severity": "Important"
+},
+{
+"metric_id": 4,
+"metric_name": "Faithfulness",
+"category": "Answer Quality",
+"severity": "Critical"
+},
+{
+"metric_id": 5,
+"metric_name": "Response Clarity",
+"category": "Answer Quality",
+"severity": "Important"
+},
+{
+"metric_id": 6,
+"metric_name": "Safety Score",
+"category": "Trust and Reliability",
+"severity": "Critical"
+},
+{
+"metric_id": 7,
+"metric_name": "Graceful Fallback",
+"category": "Trust and Reliability",
+"severity": "Critical"
+},
+{
+"metric_id": 8,
+"metric_name": "Latency(p95)",
+"category": "Performance",
+"severity": "Important"
+},
+{
+"metric_id": 9,
+"metric_name": "Task Completion Rate",
+"category": "Performance",
+"severity": "Important"
+},
+{
+"metric_id": 10,
+"metric_name": "Cost per Conversation",
+"category": "Operational",
+"severity": "Informational"
+},
+{
+"metric_id": 11,
+"metric_name": "Observability Implementation",
+"category": "Operational",
+"severity": "Important"
+}
+]

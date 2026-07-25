@@ -1,0 +1,44 @@
+{
+  "Beta": {
+    "overall_score": 7.0,
+    "critical_metrics": {
+      "Completeness": 7.0,
+      "Accuracy": 7.0,
+      "Faithfulness": 7.0,
+      "Safety Score": 7.0,
+      "Graceful Fallback": 7.0
+    }
+  },
+
+  "GA": {
+    "overall_score": 8.0,
+    "critical_metrics": {
+      "Completeness": 8.0,
+      "Accuracy": 8.0,
+      "Faithfulness": 8.0,
+      "Safety Score": 8.0,
+      "Graceful Fallback": 8.0
+    },
+    "observability_required": true
+  },
+
+  "review_rules": {
+    "beta_review": {
+      "overall_score_range": [6.9, 7.1],
+      "critical_metric_range": [6.9, 7.1]
+    },
+
+    "ga_review": {
+      "overall_score_range": [7.9, 8.1],
+      "critical_metric_range": [7.9, 8.1]
+    },
+
+    "operational_review": {
+      "latency_ms": 5000
+    },
+
+    "governance_review": {
+      "observability_required": true
+    }
+  }
+}
