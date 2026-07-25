@@ -1,8 +1,8 @@
 import type { AgentExplanationContext, ExplanationCacheEntry } from '@/types';
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
-const DEFAULT_MODEL = 'gemini-3.1-flash-lite';
-const FALLBACK_MODELS = ['gemini-2.5-flash-lite', 'gemini-2.0-flash-lite', 'gemini-1.5-flash-lite'];
+const DEFAULT_MODEL = 'gemini-3.5-flash-lite';
+const FALLBACK_MODELS = ['gemini-3.1-flash-lite', 'gemini-2.5-flash-lite'];
 
 const CACHE = new Map<string, ExplanationCacheEntry>();
 
