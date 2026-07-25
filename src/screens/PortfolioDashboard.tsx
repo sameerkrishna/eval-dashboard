@@ -5,6 +5,7 @@ import StatusBadge from '@/components/StatusBadge';
 import SectionCard from '@/components/SectionCard';
 import EmptyState from '@/components/EmptyState';
 import { getLifecycleIndex, LIFECYCLE_ORDER } from '@/lib/enrichmentEngine';
+import { ChevronRight } from 'lucide-react';
 import type { EnrichedAgent } from '@/types';
 
 export default function PortfolioDashboard() {
@@ -266,12 +267,13 @@ export default function PortfolioDashboard() {
                           <span className="text-sm text-gray-400 dark:text-gray-500">—</span>
                         )}
                       </td>
-                      <td className="px-4 py-3">
+                      <td className="px-4 py-3 text-right">
                         <Link
                           to={`/agents/${agent.agent_id}`}
-                          className="text-sm text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-bold"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 border border-primary-200 dark:border-primary-800 transition-colors whitespace-nowrap"
                         >
-                          More Info &gt;
+                          <span>More Info</span>
+                          <ChevronRight className="w-3.5 h-3.5" />
                         </Link>
                       </td>
                     </tr>
@@ -308,7 +310,13 @@ export default function PortfolioDashboard() {
                           return <StatusBadge label={action ?? 'Completed'} variant={variant} />;
                         })()
                       ) : null}
-                      <Link to={`/agents/${agent.agent_id}`} className="text-lg text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-bold"> &gt;</Link>
+                      <Link
+                        to={`/agents/${agent.agent_id}`}
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 border border-primary-200 dark:border-primary-800 transition-colors whitespace-nowrap"
+                      >
+                        <span>More Info</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   </div>
                 ))}
