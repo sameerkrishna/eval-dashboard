@@ -39,7 +39,7 @@
 "action_taken": "Rejected",
 "review_timestamp": "2026-07-24T16:45:00Z",
 "reviewer": "Reviewer A",
-"review_notes": "Observability controls not implemented. Rejected for GA promotion until monitoring capabilities are completed.""
+"review_notes": "Observability controls not implemented. Rejected for GA promotion until monitoring capabilities are completed."
 },
 {
 "review_id": 4,
