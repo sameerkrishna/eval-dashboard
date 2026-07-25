@@ -270,7 +270,7 @@ export default function PortfolioDashboard() {
                       <td className="px-4 py-3 text-right">
                         <Link
                           to={`/agents/${agent.agent_id}`}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 border border-primary-200 dark:border-primary-800 transition-colors whitespace-nowrap"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm whitespace-nowrap"
                         >
                           <span>More Info</span>
                           <ChevronRight className="w-3.5 h-3.5" />
@@ -312,7 +312,7 @@ export default function PortfolioDashboard() {
                       ) : null}
                       <Link
                         to={`/agents/${agent.agent_id}`}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 border border-primary-200 dark:border-primary-800 transition-colors whitespace-nowrap"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm whitespace-nowrap"
                       >
                         <span>More Info</span>
                         <ChevronRight className="w-3.5 h-3.5" />
