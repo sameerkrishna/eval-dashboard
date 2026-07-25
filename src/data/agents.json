@@ -151,6 +151,6 @@
 "needs_review": false,
 "review_status": "N/A",
 "review_type": "None",
-"summary": "The Security Policy Assistant delivers accurate, policy-aligned guidance across security workflows and consistently demonstrates strong grounding, safety, and escalation behavior. The agent performs well when interpreting security policies, recommending remediation steps, and guiding users through standard security procedures. With strong evaluation results across all critical metrics and the required operational controls in place, the agent meets the requirements for GA promotion and is approved for broader deployment."
+"summary": "The Security Policy Assistant delivers accurate, policy-aligned guidance across security workflows and consistently demonstrates strong grounding, safety, and escalation behavior. As a Regulated risk agent, it auto-triggered a mandatory Governance & Compliance Review for GA promotion, which has been completed and approved. With strong evaluation results across all critical metrics and operational controls verified, the agent meets all requirements for GA promotion."
 }
 ]
