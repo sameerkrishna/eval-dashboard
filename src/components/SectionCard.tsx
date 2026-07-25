@@ -23,7 +23,7 @@ export default function SectionCard({ title, children, className = '', collapsib
               className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors"
               aria-label={isOpen ? 'Collapse section' : 'Expand section'}
             >
-              {isOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+              {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </button>
           )}
           <h2 className="text-sm font-semibold text-gray-900 dark:text-white">{title}</h2>
