@@ -269,7 +269,7 @@ export default function PortfolioDashboard() {
                       <td className="px-4 py-3">
                         <Link
                           to={`/agents/${agent.agent_id}`}
-                          className="text-lg text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-bold"
+                          className="text-sm text-primary-400 hover:text-primary-400 dark:text-primary-400 dark:hover:text-primary-300 font-bold"
                         >
                            Read More&gt;
                         </Link>
