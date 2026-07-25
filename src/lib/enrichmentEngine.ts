@@ -155,6 +155,9 @@ export function enrichAgent(
   if (pendingReview) {
     reviewTriggerType = pendingReview.review_type;
     reviewReason = pendingReview.review_reason;
+  } else if (agent.risk_category === 'Regulated' && agent.next_lifecycle_state === 'GA' && completedReviews.length === 0) {
+    reviewTriggerType = 'Governance';
+    reviewReason = 'Mandatory Regulated Risk Governance Review required for GA promotion';
   }
 
   const isBlocked = pendingReview !== null && pendingReview.action_required;

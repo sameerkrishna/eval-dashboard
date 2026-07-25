@@ -349,6 +349,7 @@ export default function PortfolioDashboard() {
               <li><strong>GA Review:</strong> 7.9 ≤ Overall Score ≤ 8.1 OR Any critical metric between 7.9 and 8.1</li>
               <li><strong>Operational Review:</strong> Triggered when Latency (P95) &gt; 5000 ms</li>
               <li><strong>Governance Review:</strong> Triggered when the agent is evaluated for GA promotion and Observability Implementation = 0</li>
+              <li><strong>Regulated Risk Policy:</strong> All <em>Regulated</em> agents targeting GA promotion auto-trigger a mandatory Governance &amp; Compliance Review regardless of evaluation score</li>
             </ul>
           </div>
       </SectionCard>

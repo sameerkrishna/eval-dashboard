@@ -39,6 +39,12 @@
 
     "governance_review": {
       "observability_required": true
+    },
+
+    "regulated_governance_review": {
+      "risk_category": "Regulated",
+      "target_stage": "GA",
+      "requires_review": true
     }
   }
 }
