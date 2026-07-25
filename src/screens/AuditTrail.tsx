@@ -191,10 +191,6 @@ export default function AuditTrail() {
                                 <>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                      <span className="text-gray-500 dark:text-gray-400">Review ID:</span>
-                                      <span className="ml-2 font-medium text-gray-900 dark:text-white">{item.review_id}</span>
-                                    </div>
-                                    <div>
                                       <span className="text-gray-500 dark:text-gray-400">Review Status:</span>
                                       <span className="ml-2">
                                         <StatusBadge
@@ -247,14 +243,6 @@ export default function AuditTrail() {
                               ) : (
                                 <>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                      <span className="text-gray-500 dark:text-gray-400">Review ID:</span>
-                                      <span className="ml-2 font-medium text-gray-900 dark:text-white">{item.review_id}</span>
-                                    </div>
-                                    <div>
-                                      <span className="text-gray-500 dark:text-gray-400">Agent ID:</span>
-                                      <span className="ml-2 font-medium text-gray-900 dark:text-white">{item.agent_id}</span>
-                                    </div>
                                     <div>
                                       <span className="text-gray-500 dark:text-gray-400">Risk Category:</span>
                                       <span className="ml-2 font-medium text-gray-900 dark:text-white">
