@@ -180,7 +180,7 @@ export default function AuditTrail() {
                             aria-label={isExpanded ? 'Hide details' : 'Show detailed info'}
                           >
                             <span>{isExpanded ? 'Hide' : 'Detailed Info'}</span>
-                            {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                           </button>
                         </td>
                       </tr>
