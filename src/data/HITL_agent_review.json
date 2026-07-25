@@ -47,7 +47,7 @@
 "review_type": "Governance",
 "review_reason": "Mandatory Regulated Risk Governance Review required for GA promotion",
 "previous_state": "Beta",
-"current_state": "Beta",
+"current_state": "GA",
 "next_state": "GA",
 "review_status": "Completed",
 "action_taken": "Approved",
