@@ -1,0 +1,2 @@
+[functions.gemini-explain]
+verify_jwt = false
